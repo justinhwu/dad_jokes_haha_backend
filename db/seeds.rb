@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+bob = User.find_or_create_by(first_name: 'Bob',last_name: 'Johnson', username: 'bobjohnson', age: 35, email: 'bobjohnson@gmail.com')
+list1 = List.find_or_create_by(name: 'Bobs List', user_id: bob.id)
+joke1 = Joke.find_or_create_by(phrase: 'What do you call a fake noodle? An Impasta.')
+join1 = JokeList.find_or_create_by(list_id: list1.id, joke_id: joke1.id)
+
+joe = User.find_or_create_by(first_name: 'Joe',last_name: 'Kelly', username: 'joekelly', age: 35, email: 'joekelly@gmail.com')
+list2 = List.find_or_create_by(name: 'Joes List', user_id: joe.id)
+joke2 = Joke.find_or_create_by(phrase: 'How many apples grow on a tree? All of them.')
+join2 = JokeList.find_or_create_by(list_id: list2.id, joke_id: joke2.id)
+join3 = JokeList.find_or_create_by(list_id: list1.id, joke_id: joke2.id)
+list3 = List.find_or_create_by(name: 'Joes List 2', user_id: joe.id)

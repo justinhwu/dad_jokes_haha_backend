@@ -1,0 +1,2 @@
+class JokeListsController < ApplicationController
+end

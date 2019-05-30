@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_234754) do
   end
 
   create_table "jokes", id: :string, force: :cascade do |t|
-    t.string "joke"
+    t.string "phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

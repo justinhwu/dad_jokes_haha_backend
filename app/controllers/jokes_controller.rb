@@ -8,7 +8,7 @@ class JokesController < ApplicationController
   def create
     @joke = Joke.find_or_create_by(joke_params)
     params[:list_ids].each do |list_id|
-      JokeList.create(list_id: list_id ,joke_id: @joke.id)
+      JokeList.find_or_create_by(list_id: list_id ,joke_id: @joke.id)
     end
   end
 
@@ -16,5 +16,5 @@ class JokesController < ApplicationController
   def joke_params
     params.require(:joke).permit(:id, :phrase, :list_ids)
   end
-
+  
 end

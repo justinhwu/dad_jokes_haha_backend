@@ -10,6 +10,10 @@ class ListsController < ApplicationController
     render json: @list
   end
 
+  def destroy
+    List.find(params[:id]).destroy
+  end
+
   private
 
   def list_params

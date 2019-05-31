@@ -14,6 +14,7 @@ class ListsController < ApplicationController
     List.find(params[:id]).destroy
   end
 
+
   private
 
   def list_params

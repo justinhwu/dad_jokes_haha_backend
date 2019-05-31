@@ -6,7 +6,8 @@ class ListsController < ApplicationController
   end
 
   def create
-
+    @list = List.create(list_params)
+    render json: @list
   end
 
   private

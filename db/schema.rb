@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2019_05_27_234754) do
 
   create_table "joke_lists", force: :cascade do |t|
     t.integer "list_id"
-    t.integer "joke_id"
+    t.string "joke_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "jokes", force: :cascade do |t|
+  create_table "jokes", id: :string, force: :cascade do |t|
     t.string "phrase"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

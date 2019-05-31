@@ -5,7 +5,12 @@ class ListsController < ApplicationController
   end
 
   def create
-    
+
+  end
+
+  def destroy
+    List.find(params[:id]).destroy
+
   end
 
   private
